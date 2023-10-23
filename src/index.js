@@ -1,3 +1,5 @@
-import "../dist/style.css";
+import createSidebar from "./sideBar";
+import createContentArea from "./contentArea";
 
-alert("Hi");
+createSidebar();
+createContentArea();
