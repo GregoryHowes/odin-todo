@@ -1,6 +1,13 @@
 //Create the side bar of the todo app
 
 const createSidebar = () => {
+
+    //create heading elements
+    const timeHeading = document.createElement("h2");
+    timeHeading.textContent = "by time";
+    const categoryHeading = document.createElement("h2");
+    categoryHeading.textContent = "by category";
+
     const sidebarElement = document.getElementById("sidebar");
     console.log(sidebarElement === null);
     const sidebarContents = document.createElement("div");    
@@ -11,9 +18,12 @@ const createSidebar = () => {
     todayTasks.textContent = "Today";
     const thisWeekTasks = document.createElement("li");
     thisWeekTasks.textContent = "This Week";
+    
     //add date-specific tasks
     timeList.appendChild(todayTasks);
     timeList.appendChild(thisWeekTasks);
+    //add heading
+    sidebarContents.appendChild(timeHeading);
     sidebarContents.appendChild(timeList);
 
     //build the list of projects
@@ -27,6 +37,9 @@ const createSidebar = () => {
     projectList.appendChild(workProject);
     projectList.appendChild(familyProject);
     projectList.appendChild(hobbyProject);
+    
+    //add heading
+    sidebarContents.appendChild(categoryHeading);
     sidebarContents.appendChild(projectList);
 
     //add the sidebar to the DOM
