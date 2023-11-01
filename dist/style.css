@@ -17,7 +17,7 @@ body {
 
 .header {
     grid-row: 1;
-    background-color: darkgray;
+    background-color: aquamarine;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,11 +29,12 @@ body {
     background-color: black;
     display: grid;
     grid-template-columns: 2fr 8fr;
+    grid-template-rows: 1fr;
 }
 
 #sidebar {
     grid-column: 1;
-    background-color: black;
+    background-color: darkgray;
     padding: 1rem;
 }
 
@@ -43,7 +44,7 @@ body {
 }
 
 #sidebar li {
-    color: lightgray;
+    color: black;
     font-size: 1rem;
     list-style: none;
 }
@@ -55,12 +56,44 @@ body {
 
 #content {
     grid-column: 2;
-    background-color: olive;
+    background-color: lightgray;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 3fr 4fr 2fr 1fr 1rem;
+    grid-template-rows: repeat(auto-fill, 50px);
+    gap: 10px;
+}
+
+.todo-field {
+    align-items: center;
+    background-color: paleturquoise;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.title {
+    grid-column: 1;
+}
+
+.description {
+    grid-column: 2;
+}
+
+.due-date {
+    grid-column: 3;
+}
+
+.priority {
+    grid-column: 4;
+}
+
+.checklist {
+    grid-column: 5;
 }
 
 .footer {
     grid-row: 3;
-    background-color: darkgray;
+    background-color: aquamarine;
     display: flex;
     justify-content: center;
     align-items: center;
