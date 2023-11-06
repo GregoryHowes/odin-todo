@@ -59,16 +59,25 @@ body {
     background-color: lightgray;
     padding: 1rem;
     display: grid;
-    grid-template-columns: 3fr 4fr 2fr 1fr 1rem;
+    grid-template-columns: 3fr 4fr 2fr 1fr 3rem 3rem 3rem;
     grid-template-rows: repeat(auto-fill, 50px);
     gap: 10px;
 }
 
 .todo-field {
-    align-items: center;
+    align-content: center;
     background-color: paleturquoise;
     border-radius: 10px;
     height: 100%;
+    padding: 10px;
+}
+
+.edit-item {
+    background-color: lightgreen;
+}
+
+.delete-item {
+    background-color: lightcoral;
 }
 
 .title {
@@ -89,6 +98,14 @@ body {
 
 .checklist {
     grid-column: 5;
+}
+
+.edit-item {
+    grid-column: 6;
+}
+
+.delete-item {
+    grid-column: 7;
 }
 
 .footer {
