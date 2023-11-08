@@ -4,7 +4,7 @@ import { Todo } from "./todo";
 //create empty array of todo tasks
 const todoArray = [];
 //add sample tasks to the array
-todoArray.push(new Todo("Dynamically-added tasky!", "Dynamically tidy up the house", "2023-11-05", "High", getTaskId()));
+todoArray.push(new Todo("Dynamically-added tasky!", "Dynamically tidy up the house", "2023-11-05", "High", "X", getTaskId()));
 
 
 
