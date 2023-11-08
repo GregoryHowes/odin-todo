@@ -1,10 +1,17 @@
 //create the content area of the todo app
 import { Todo } from "./todo";
 
+//create empty array of todo tasks
+const todoArray = [];
+//add sample tasks to the array
+todoArray.push(new Todo("Dynamically-added tasky!", "Dynamically tidy up the house", "2023-11-05", "High", getTaskId()));
+
+
+
 const createContentArea = () => {
     //alert("hi from content area!");
-    const newTodo = new Todo("Dynamically-added tasky!", "Dynamically tidy up the house", "2023-11-05", "High", "");
-    console.log(createTodoInGrid(newTodo));
+    //const newTodo = new Todo("Dynamically-added tasky!", "Dynamically tidy up the house", "2023-11-05", "High", "");
+    createTodoInGrid(todoArray[0]);
 }
 
 
@@ -37,6 +44,11 @@ const createTodoInGrid = (todoItem) => {
     //create delete icon div
     const todoDelete = document.createElement("div");
     todoDelete.classList.add("todo-field", "delete-item");
+    //create id column (hidden through css)
+    const todoId = document.createElement("div");
+    todoId.classList.add("todo-field" , "todo-id");
+    todoId.textContent = todoItem.id;
+
 
     //add task items to DOM
     gridContent.appendChild(todoTitle);
@@ -46,8 +58,16 @@ const createTodoInGrid = (todoItem) => {
     gridContent.appendChild(todoChecklist);
     gridContent.appendChild(todoEdit);
     gridContent.appendChild(todoDelete);
+    gridContent.appendChild(todoId);
 
     return(todoItem);
+}
+
+//return the length of the todo task array + 1 to create new id
+function getTaskId() {
+    console.log("donkey");
+    //return todoArray.length;
+    return "Donkey";
 }
 
 export default createContentArea;

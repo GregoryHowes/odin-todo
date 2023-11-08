@@ -6,10 +6,12 @@
 
 body {
     font-family: roboto, sans-serif;
+    width: 100dvw;
 }
 
 .wrapper {
     height: 100dvh;
+    width: 100dvw;
     display: grid;
     grid-template-rows: 1fr 8fr 1fr;
   
@@ -59,7 +61,7 @@ body {
     background-color: lightgray;
     padding: 1rem;
     display: grid;
-    grid-template-columns: 3fr 4fr 2fr 1fr 3rem 3rem 3rem;
+    grid-template-columns: 3fr 4fr 2fr 1fr 3rem 3rem 3rem 0px;
     grid-template-rows: repeat(auto-fill, 50px);
     gap: 10px;
 }
@@ -106,6 +108,12 @@ body {
 
 .delete-item {
     grid-column: 7;
+}
+
+.todo-id {
+    grid-column: 8;
+    display: none;
+    background-color: red;
 }
 
 .footer {
