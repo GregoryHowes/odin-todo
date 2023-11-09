@@ -74,14 +74,6 @@ body {
     padding: 10px;
 }
 
-.edit-item {
-    background-color: lightgreen;
-}
-
-.delete-item {
-    background-color: lightcoral;
-}
-
 .title {
     grid-column: 1;
 }
@@ -92,28 +84,42 @@ body {
 
 .due-date {
     grid-column: 3;
+    justify-content: center;
 }
 
 .priority {
+    justify-content: center;
     grid-column: 4;
 }
 
 .checklist {
+    justify-content: center;
     grid-column: 5;
 }
 
 .edit-item {
     grid-column: 6;
+    background-color: lightgreen;
+}
+
+.edit-item:hover {
+    background-color: rgb(64, 230, 64);
+    transition: 0.5s;
 }
 
 .delete-item {
     grid-column: 7;
+    background-color: lightcoral;
+}
+
+.delete-item:hover {
+    background-color: rgb(236, 75, 75);
+    transition: 0.5s;
 }
 
 .todo-id {
     grid-column: 8;
     display: none;
-    background-color: red;
 }
 
 .footer {

@@ -3,15 +3,20 @@ import { Todo } from "./todo";
 
 //create empty array of todo tasks
 const todoArray = [];
-//add sample tasks to the array
+//add sample tasks to the arrays
+todoArray.push(new Todo("Clean house!", "Do it sooner rather than later!", "2023-11-11", "High", "X", getTaskId()));
 todoArray.push(new Todo("Dynamically-added tasky!", "Dynamically tidy up the house", "2023-11-05", "High", "X", getTaskId()));
+todoArray.push(new Todo("Pay taxes", "Nobody will let you forget this one anyway!", "2024-03-31", "Medium", "X", getTaskId()));
 
 
 
 const createContentArea = () => {
     //alert("hi from content area!");
     //const newTodo = new Todo("Dynamically-added tasky!", "Dynamically tidy up the house", "2023-11-05", "High", "");
-    createTodoInGrid(todoArray[0]);
+    //createTodoInGrid(todoArray[0]);
+    todoArray.forEach((todoItem) => {
+        createTodoInGrid(todoItem);
+    });
 }
 
 
@@ -66,8 +71,8 @@ const createTodoInGrid = (todoItem) => {
 //return the length of the todo task array + 1 to create new id
 function getTaskId() {
     console.log("donkey");
-    //return todoArray.length;
-    return "Donkey";
+    return todoArray.length;
+    //return "Donkey";
 }
 
 export default createContentArea;
