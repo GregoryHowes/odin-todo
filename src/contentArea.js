@@ -10,6 +10,19 @@ todoArray.push(new Todo("Pay taxes", "Nobody will let you forget this one anyway
 
 
 
+const createEventListeners = () => {
+    document.addEventListener("click", editTodoItem);
+}
+
+//Edit the selected todo item, using the id of the element to access the appropriate
+// element in the toDoArry array
+function editTodoItem(item) {
+    //console.log(item.srcElement.dataset.id);
+    //console.log(todoArray[this.dataset.id]);
+}
+
+createEventListeners();
+
 const createContentArea = () => {
     //alert("hi from content area!");
     //const newTodo = new Todo("Dynamically-added tasky!", "Dynamically tidy up the house", "2023-11-05", "High", "");
@@ -46,9 +59,16 @@ const createTodoInGrid = (todoItem) => {
     //create edit icon div
     const todoEdit = document.createElement("div");
     todoEdit.classList.add("todo-field", "edit-item");
+    todoEdit.dataset.id = todoItem.id;
+    const editIcon = document.createElement("i");
+    editIcon.classList.add("fa", "fa-pencil");
+    todoEdit.appendChild(editIcon);
     //create delete icon div
     const todoDelete = document.createElement("div");
     todoDelete.classList.add("todo-field", "delete-item");
+    const deleteIcon = document.createElement("i");
+    deleteIcon.classList.add("fa", "fa-trash");
+    todoDelete.appendChild(deleteIcon);
     //create id column (hidden through css)
     const todoId = document.createElement("div");
     todoId.classList.add("todo-field" , "todo-id");
