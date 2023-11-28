@@ -27,12 +27,12 @@ const createEventListeners = () => {
 //Edit the selected todo item, using the id of the element to access the appropriate
 // element in the toDoArry array
 function editTodoItem(item) {
-    console.log(item.srcElement.dataset.id);
-    //console.log(item.dataset.id);
-    //console.log(todoArray[this.dataset.id]);
-    //const thisTodo = item.target.parentElement;
-    //console.log(item);
-    //console.log(thisTodo.dataset.id);
+    //console.log(item.srcElement.dataset.id);
+    console.log(todoArray[item.srcElement.dataset.id]);
+
+    //test if my edit in row idea will work, by changing background colour of selected todo item
+    const thisTask = document.querySelectorAll('[data-id="' + item.srcElement.dataset.id + '"]');
+    console.log(thisTask);
 }
 
 
@@ -52,6 +52,7 @@ const createTodoInGrid = (todoItem) => {
     //create title
     const todoTitle = document.createElement("div");
     todoTitle.classList.add("todo-field", "title");
+    todoTitle.dataset.id = todoItem.id;
     todoTitle.textContent = todoItem.title;
     //create description
     const todoDescription = document.createElement("div");
