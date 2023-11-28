@@ -105,6 +105,8 @@ body {
 
 .edit-item i {
     height: 100%;
+    width: 100%;
+    pointer-events: none;
 }
 
 .edit-item:hover {

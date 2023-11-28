@@ -1,35 +1,48 @@
 //create the content area of the todo app
 import { Todo } from "./todo";
-
-//create empty array of todo tasks
 const todoArray = [];
-//add sample tasks to the arrays
-todoArray.push(new Todo("Clean house!", "Do it sooner rather than later!", "2023-11-11", "High", "X", getTaskId()));
-todoArray.push(new Todo("Dynamically-added tasky!", "Dynamically tidy up the house", "2023-11-05", "High", "X", getTaskId()));
-todoArray.push(new Todo("Pay taxes", "Nobody will let you forget this one anyway!", "2024-03-31", "Medium", "X", getTaskId()));
+
+
+function createToDoArray() {
+    //create empty array of todo tasks
+
+    //add sample tasks to the arrays
+    todoArray.push(new Todo("Clean house!", "Do it sooner rather than later!", "2023-11-11", "High", "X", getTaskId()));
+    todoArray.push(new Todo("Dynamically-added tasky!", "Dynamically tidy up the house", "2023-11-05", "High", "X", getTaskId()));
+    todoArray.push(new Todo("Pay taxes", "Nobody will let you forget this one anyway!", "2024-03-31", "Medium", "X", getTaskId()));
+}
 
 
 
 const createEventListeners = () => {
-    document.addEventListener("click", editTodoItem);
+    const editButtons = document.querySelectorAll(".edit-item");
+    console.log("Edit button element list:");
+    console.log(editButtons);
+    editButtons.forEach((editButton) => {
+        editButton.addEventListener("click", editTodoItem);
+    })
+    //document.addEventListener("click", editTodoItem);
 }
 
 //Edit the selected todo item, using the id of the element to access the appropriate
 // element in the toDoArry array
 function editTodoItem(item) {
-    //console.log(item.srcElement.dataset.id);
+    console.log(item.srcElement.dataset.id);
+    //console.log(item.dataset.id);
     //console.log(todoArray[this.dataset.id]);
+    //const thisTodo = item.target.parentElement;
+    //console.log(item);
+    //console.log(thisTodo.dataset.id);
 }
 
-createEventListeners();
+
 
 const createContentArea = () => {
-    //alert("hi from content area!");
-    //const newTodo = new Todo("Dynamically-added tasky!", "Dynamically tidy up the house", "2023-11-05", "High", "");
-    //createTodoInGrid(todoArray[0]);
+    createToDoArray();
     todoArray.forEach((todoItem) => {
         createTodoInGrid(todoItem);
     });
+    createEventListeners();
 }
 
 
@@ -90,9 +103,7 @@ const createTodoInGrid = (todoItem) => {
 
 //return the length of the todo task array + 1 to create new id
 function getTaskId() {
-    console.log("donkey");
     return todoArray.length;
-    //return "Donkey";
 }
 
 export default createContentArea;
