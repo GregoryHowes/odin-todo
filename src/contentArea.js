@@ -1,5 +1,6 @@
 //create the content area of the todo app
 import { Todo } from "./todo";
+import openModalWindow from "./modalWindow";
 const todoArray = [];
 
 
@@ -43,6 +44,7 @@ const createContentArea = () => {
         createTodoInGrid(todoItem);
     });
     createEventListeners();
+    openModalWindow();
 }
 
 
