@@ -33,7 +33,8 @@ function editTodoItem(item) {
 
     //test if my edit in row idea will work, by changing background colour of selected todo item
     const thisTask = document.querySelectorAll('[data-id="' + item.srcElement.dataset.id + '"]');
-    console.log(thisTask);
+    //console.log(thisTask);
+    openModalWindow(todoArray[item.srcElement.dataset.id]);
 }
 
 
@@ -44,7 +45,6 @@ const createContentArea = () => {
         createTodoInGrid(todoItem);
     });
     createEventListeners();
-    openModalWindow();
 }
 
 
