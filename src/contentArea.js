@@ -44,7 +44,21 @@ const createContentArea = () => {
     todoArray.forEach((todoItem) => {
         createTodoInGrid(todoItem);
     });
+    createTodoIcon();
+
     createEventListeners();
+}
+
+//add an icon to the bottom right of the existing todo items
+// to allow users to add new todo item
+const createTodoIcon = () => {
+    const gridContent = document.getElementById("content");
+    const addIconDiv = document.createElement("div");
+    addIconDiv.classList.add("new-todo-icon");
+    const addIcon = document.createElement("i");
+    addIcon.classList.add("fa", "fa-pencil");
+    addIconDiv.appendChild(addIcon);
+    gridContent.appendChild(addIconDiv);
 }
 
 
